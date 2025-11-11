@@ -1,0 +1,16 @@
+9clc
+clear
+n=input("Enter the number of forces: ");
+for i=1:n
+    fprintf("for force %d\n ",i);
+    F(i)=input("Enter the magnitude of force in kN:");
+    A(i)=input("Enter the angle of inclination of the force:");
+    H(i)=F(i)*cosd(A(i));
+    V(i)=F(i)*sind(A(i));
+end
+%sum of the forces in horizontal and vertical 
+S_H=sum(H);
+S_V=sum(V);
+R=sqrt((S_H)^2 + (S_V)^2);
+theta=atand(S_V/S_H);
+fprintf("the magnitude of the resultant is %f and the inclination is %f ",R,theta);
